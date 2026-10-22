@@ -61,7 +61,7 @@ A comprehensive comparison of top hosted and serverless NoSQL database platforms
 
 ## 💻 Open-Source GitHub Projects
 
-Explore leading open-source NoSQL engines spanning document stores, key-value caches, wide-column engines, vector databases, and multi-model platforms. **Sorted in strictly descending order by GitHub Stars count.**
+Explore leading open-source NoSQL engines spanning document stores, key-value caches, wide-column engines, vector databases, and multi-model platforms. **Sorted in strictly descending order by GitHub_Stars_Count.**
 
 1. ### ⚡ [Redis](https://github.com/redis/redis) <a href="https://github.com/redis/redis/stargazers"><img src="https://img.shields.io/github/stars/redis/redis?style=social&color=white" alt="redis Stars" /></a>
    - **Type**: In-Memory Key-Value / Data Structure Store
@@ -243,7 +243,7 @@ We welcome additions, corrections, and benchmark reports from the community!
 
 1. 🍴 **Fork the repository** on GitHub.
 2. 🌿 **Create a new branch**: `git checkout -b feature/add-nosql-engine`.
-3. 📝 **Edit `README.md`**: Follow the existing format (include license, GitHub star badge, specific pricing, and architectural highlights).
+3. 📝 **Edit `README.md`**: Follow the existing format (include license, GitHub Stars_Badge, specific pricing, and architectural highlights).
 4. 🚀 **Commit your changes**: `git commit -m "Add EngineName to Open-Source list"`.
 5. 📤 **Push and create a Pull Request**: Submit your PR with a concise rationale.
 
