@@ -1,0 +1,192 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 380" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080c16" />
+      <stop offset="50%" stop-color="#0d1424" />
+      <stop offset="100%" stop-color="#050811" />
+    </linearGradient>
+
+    <linearGradient id="titleGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="35%" stop-color="#818cf8" />
+      <stop offset="70%" stop-color="#c084fc" />
+      <stop offset="100%" stop-color="#f472b6" />
+    </linearGradient>
+
+    <linearGradient id="cardGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.75" />
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.85" />
+    </linearGradient>
+
+    <linearGradient id="glowLineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.1" />
+      <stop offset="50%" stop-color="#818cf8" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#c084fc" stop-opacity="0.1" />
+    </linearGradient>
+
+    <!-- Glowing Filters -->
+    <filter id="neonGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Grid Pattern -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="0.75" stroke-opacity="0.45" />
+      <circle cx="40" cy="0" r="1.5" fill="#38bdf8" fill-opacity="0.3" />
+    </pattern>
+
+    <style>
+      @keyframes pulseGlow {
+        0%, 100% { opacity: 0.35; transform: scale(1); }
+        50% { opacity: 0.85; transform: scale(1.08); }
+      }
+      @keyframes dashFlow {
+        from { stroke-dashoffset: 400; }
+        to { stroke-dashoffset: 0; }
+      }
+      @keyframes floatSlow {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-7px); }
+      }
+      @keyframes ringSpin {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+      .pulse-circle {
+        transform-origin: center;
+        animation: pulseGlow 4s ease-in-out infinite;
+      }
+      .orbit-ring {
+        transform-origin: 1040px 180px;
+        animation: ringSpin 24s linear infinite;
+      }
+      .orbit-ring-left {
+        transform-origin: 160px 200px;
+        animation: ringSpin 30s linear infinite reverse;
+      }
+      .flowing-dash {
+        stroke-dasharray: 10, 14;
+        animation: dashFlow 12s linear infinite;
+      }
+      .floating-pill {
+        animation: floatSlow 6s ease-in-out infinite;
+      }
+      .title-text {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        font-weight: 900;
+        letter-spacing: -0.02em;
+      }
+      .sub-text {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        font-weight: 500;
+      }
+      .badge-text {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        font-weight: 600;
+      }
+    </style>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="1200" height="380" fill="url(#bgGradient)" rx="16" />
+  <rect width="1200" height="380" fill="url(#grid)" rx="16" />
+
+  <!-- Outer Neon Border Frame -->
+  <rect x="2" y="2" width="1196" height="376" rx="15" fill="none" stroke="url(#glowLineGrad)" stroke-width="1.5" />
+
+  <!-- DYNAMIC ANIMATED BACKGROUND ELEMENTS -->
+  <!-- Ambient Glow Orbs -->
+  <circle cx="160" cy="190" r="140" fill="#38bdf8" opacity="0.12" filter="url(#neonGlow)" class="pulse-circle" />
+  <circle cx="1040" cy="190" r="150" fill="#c084fc" opacity="0.12" filter="url(#neonGlow)" class="pulse-circle" />
+  <circle cx="600" cy="80" r="100" fill="#818cf8" opacity="0.08" filter="url(#neonGlow)" />
+
+  <!-- Background Connecting Flow Lines -->
+  <path d="M 60 300 Q 250 160, 500 240 T 950 140 Q 1080 180, 1140 100" fill="none" stroke="#38bdf8" stroke-width="1.8" opacity="0.35" class="flowing-dash" />
+  <path d="M 80 80 Q 300 260, 600 130 T 1120 280" fill="none" stroke="#c084fc" stroke-width="1.5" opacity="0.3" class="flowing-dash" />
+
+  <!-- Left Futuristic Tech Ring (Distributed Nodes) -->
+  <g class="orbit-ring-left" opacity="0.45">
+    <circle cx="160" cy="200" r="95" fill="none" stroke="#38bdf8" stroke-width="1.2" stroke-dasharray="6, 8" />
+    <circle cx="160" cy="105" r="4.5" fill="#38bdf8" filter="url(#softGlow)" />
+    <circle cx="255" cy="200" r="3.5" fill="#818cf8" />
+    <circle cx="95" cy="265" r="4" fill="#c084fc" />
+  </g>
+
+  <!-- Right Futuristic Tech Ring (Replication Ring) -->
+  <g class="orbit-ring" opacity="0.5">
+    <circle cx="1040" cy="180" r="110" fill="none" stroke="#818cf8" stroke-width="1.2" stroke-dasharray="8, 12" />
+    <circle cx="1040" cy="70" r="5" fill="#f472b6" filter="url(#softGlow)" />
+    <circle cx="1150" cy="180" r="4" fill="#38bdf8" />
+    <circle cx="960" cy="255" r="4.5" fill="#818cf8" />
+  </g>
+
+  <!-- Subtle Database Silhouette Graphics in Back layer -->
+  <g opacity="0.22" transform="translate(1000, 120)">
+    <ellipse cx="40" cy="20" rx="36" ry="12" fill="#818cf8" />
+    <path d="M 4 20 v 35 a 36 12 0 0 0 72 0 v -35" fill="none" stroke="#818cf8" stroke-width="2.5" />
+    <path d="M 4 55 v 35 a 36 12 0 0 0 72 0 v -35" fill="none" stroke="#818cf8" stroke-width="2.5" />
+    <path d="M 4 90 v 35 a 36 12 0 0 0 72 0 v -35" fill="none" stroke="#818cf8" stroke-width="2.5" />
+  </g>
+  <g opacity="0.18" transform="translate(120, 130)">
+    <ellipse cx="35" cy="18" rx="32" ry="10" fill="#38bdf8" />
+    <path d="M 3 18 v 30 a 32 10 0 0 0 64 0 v -30" fill="none" stroke="#38bdf8" stroke-width="2" />
+    <path d="M 3 48 v 30 a 32 10 0 0 0 64 0 v -30" fill="none" stroke="#38bdf8" stroke-width="2" />
+  </g>
+
+  <!-- FOREGROUND LAYER: STRICTLY ON TOP AND 100% VISIBLE -->
+  <!-- Category Pill / Badge at Top Center -->
+  <g class="floating-pill" transform="translate(0, 0)">
+    <rect x="475" y="42" width="250" height="32" rx="16" fill="#1e293b" fill-opacity="0.88" stroke="#38bdf8" stroke-width="1.2" filter="url(#softGlow)" />
+    <circle cx="494" cy="58" r="4.5" fill="#38bdf8" filter="url(#softGlow)" />
+    <text x="510" y="63" fill="#93c5fd" font-size="12.5" class="badge-text" letter-spacing="0.08em">CURATED ECOSYSTEM 2026</text>
+  </g>
+
+  <!-- Main Hero Title -->
+  <text x="600" y="142" text-anchor="middle" class="title-text" font-size="52" fill="url(#titleGradient)" filter="url(#softGlow)">
+    Awesome NoSQL Database
+  </text>
+
+  <!-- Subtitle -->
+  <text x="600" y="188" text-anchor="middle" class="sub-text" font-size="18.5" fill="#cbd5e1" opacity="0.95">
+    The Definitive Guide to Distributed, Document, Key-Value, Graph &amp; In-Memory Data Stores
+  </text>
+
+  <text x="600" y="218" text-anchor="middle" class="sub-text" font-size="14.5" fill="#94a3b8">
+    Production SaaS Platforms • High-Performance Open-Source Engines • Real-Time Replication
+  </text>
+
+  <!-- Feature Pills in Foreground Row -->
+  <g transform="translate(180, 260)">
+    <!-- Pill 1: Multi-Master Sync -->
+    <rect x="0" y="0" width="186" height="42" rx="21" fill="#0f172a" fill-opacity="0.9" stroke="#38bdf8" stroke-width="1.2" />
+    <text x="93" y="26" text-anchor="middle" class="badge-text" font-size="13" fill="#38bdf8">⚡ Multi-Master Sync</text>
+
+    <!-- Pill 2: Sub-Millisecond Speed -->
+    <rect x="206" y="0" width="200" height="42" rx="21" fill="#0f172a" fill-opacity="0.9" stroke="#818cf8" stroke-width="1.2" />
+    <text x="306" y="26" text-anchor="middle" class="badge-text" font-size="13" fill="#a5b4fc">🚀 Sub-Millisecond Latency</text>
+
+    <!-- Pill 3: Shard-per-Core -->
+    <rect x="426" y="0" width="190" height="42" rx="21" fill="#0f172a" fill-opacity="0.9" stroke="#c084fc" stroke-width="1.2" />
+    <text x="521" y="26" text-anchor="middle" class="badge-text" font-size="13" fill="#d8b4fe">📦 Shard-Per-Core Scale</text>
+
+    <!-- Pill 4: Offline-First -->
+    <rect x="636" y="0" width="194" height="42" rx="21" fill="#0f172a" fill-opacity="0.9" stroke="#f472b6" stroke-width="1.2" />
+    <text x="733" y="26" text-anchor="middle" class="badge-text" font-size="13" fill="#f472b6">📱 Offline-First Capable</text>
+  </g>
+
+  <!-- Bottom Accent Highlight Line -->
+  <line x1="350" y1="338" x2="850" y2="338" stroke="url(#glowLineGrad)" stroke-width="2" stroke-linecap="round" />
+</svg>
