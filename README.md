@@ -1,6 +1,6 @@
 # Awesome-Nosql-Database
 
-# Top NoSQL Database Ecosystem
+## Top NoSQL Database Ecosystem
 
 **Curated List of SaaS Products & Open-Source GitHub Projects**  
 *Focused on Multi-Master Replication, Document Flexibility & Self-Hosted Sync*  
